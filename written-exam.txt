@@ -1,0 +1,20 @@
+1. What is the primary operational difference between git fetch and git pull?
+answer:git fetch only downloads new data from a remote repository without integrating it into your local working files while git pull downloads the data and immediately merges it into your current local branch.
+2. You have uncommitted changes in your working directory and need to temporarily switch to another branch. Which workflow prevents Git from blocking the checkout due to file overwrites?
+answer: git stash safely saves your uncommitted changes to a temporary stack and cleans your working directory so you can switch branches.
+3. When executing a git merge-no-ff command, what specific behavior is enforced by Git?
+answer: Forces a new merge commit to be created even if the merge could be resolved as a fast-forward, preserving the visible history of the branch.
+4. What happens when you check out a specific commit hash directly (e.g., git checkout alh2c3d) instead of a branch name?
+answer:Puts Git into a "detached HEAD" state, meaning you are no longer viewing a branch, and any new commits you make will not update any branch pointer.
+5. You need to apply a specific bog-fis commit from a development branch onto a stable release branch without merging the entire branch history. Which command should you use?
+answer: git cherry-pick <commit-hash> copies a single commit's changes from one branch and applies them directly onto your current branch.
+6. After performing a destructive git reset-hard operation, you realize you lost recent commits that were not on any branch. Which utility can retrieve these dangling commits?
+answer:git reflog displays a history of all local HEAD movements, allowing you to find and recover the hashes of lost commits:
+7. You want to remove untracked files and directories from your working tree, including ignored files listed in gitignore. Which command flag combination achieves this
+answer:git clean -fdx forcibly removes untracked files (-f), directories (-d), and ignored files (-x).
+8. You need to undo a public commit that has already beva pushed to a shared remote repository without altering the existing commit history or disrupting collaborators. Which command is appropriate?
+answer:git revert <commit-hash> creates a new commit that records the exact opposite changes of the target commit without deleting history.
+9. You want to identify the specific commit that introduced a regression bug in a codebase with hundreds of historical commits. Which utility automates this binary search process?
+answer:  git bisect automates a binary search wizard to find the exact commit that broke your code.
+10. What is the function of the amend flag when used with git commit?
+answer:Modifies the most recent commit by adding newly staged changes and allowing you to edit the last commit message.
